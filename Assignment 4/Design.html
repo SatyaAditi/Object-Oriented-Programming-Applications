@@ -1,0 +1,59 @@
+<html><head><title>Assignment 4</title></head>
+<body>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Color</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Graphics</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>JPanel</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>JFrame</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>class</span> LinesRectsOvalsJPanel extends JPanel 
+<span style='color:#800080; '>{</span>
+   
+   <span style='color:#808030; '>@</span>Override
+   <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> paintComponent<span style='color:#808030; '>(</span>Graphics g<span style='color:#808030; '>)</span>
+   <span style='color:#800080; '>{</span>
+     <span style='color:#800000; font-weight:bold; '>super</span><span style='color:#808030; '>.</span>paintComponent<span style='color:#808030; '>(</span>g<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> 
+      <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>setBackground<span style='color:#808030; '>(</span>Color<span style='color:#808030; '>.</span>PINK<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	
+	g<span style='color:#808030; '>.</span>setColor<span style='color:#808030; '>(</span>Color<span style='color:#808030; '>.</span>GREEN<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        g<span style='color:#808030; '>.</span>fillRect<span style='color:#808030; '>(</span><span style='color:#008c00; '>30</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>30</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>70</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>setColor<span style='color:#808030; '>(</span>Color<span style='color:#808030; '>.</span>RED<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>fillRect<span style='color:#808030; '>(</span><span style='color:#008c00; '>80</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>30</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>100</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>setColor<span style='color:#808030; '>(</span>Color<span style='color:#808030; '>.</span>GREEN<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>fillRect<span style='color:#808030; '>(</span><span style='color:#008c00; '>80</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>120</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>140</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>setColor<span style='color:#808030; '>(</span>Color<span style='color:#808030; '>.</span>YELLOW<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>fillOval<span style='color:#808030; '>(</span><span style='color:#008c00; '>130</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>30</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>90</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>setColor<span style='color:#808030; '>(</span>Color<span style='color:#808030; '>.</span>RED<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>fillRect<span style='color:#808030; '>(</span><span style='color:#008c00; '>180</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>120</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>100</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>setColor<span style='color:#808030; '>(</span>Color<span style='color:#808030; '>.</span>GREEN<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>fillRect<span style='color:#808030; '>(</span><span style='color:#008c00; '>180</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>200</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>140</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>setColor<span style='color:#808030; '>(</span>Color<span style='color:#808030; '>.</span>YELLOW<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	g<span style='color:#808030; '>.</span>fillOval<span style='color:#808030; '>(</span><span style='color:#008c00; '>230</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>120</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>90</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	
+	
+
+	
+	
+     
+<span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> Design
+<span style='color:#800080; '>{</span>
+   
+   <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#400000; '>main</span><span style='color:#808030; '>(</span>String<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> args<span style='color:#808030; '>)</span>
+   <span style='color:#800080; '>{</span>
+      JFrame frame <span style='color:#808030; '>=</span> 
+         <span style='color:#800000; font-weight:bold; '>new</span> JFrame<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Design</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      frame<span style='color:#808030; '>.</span>setDefaultCloseOperation<span style='color:#808030; '>(</span>JFrame<span style='color:#808030; '>.</span>EXIT_ON_CLOSE<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+   
+      LinesRectsOvalsJPanel lROJPanel <span style='color:#808030; '>=</span> 
+         <span style='color:#800000; font-weight:bold; '>new</span> LinesRectsOvalsJPanel<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> 
+      lROJPanel<span style='color:#808030; '>.</span>setBackground<span style='color:#808030; '>(</span>Color<span style='color:#808030; '>.</span>WHITE<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> 
+      frame<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span>lROJPanel<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> 
+      frame<span style='color:#808030; '>.</span>setSize<span style='color:#808030; '>(</span><span style='color:#008c00; '>500</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>500</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      frame<span style='color:#808030; '>.</span>setVisible<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+   <span style='color:#800080; '>}</span> 
+<span style='color:#800080; '>}</span>
+</pre>
+<img src="Designimg.jpg">
+</body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+<body>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>util</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Scanner</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>util</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> GCD
+<span style='color:#800080; '>{</span>
+ 
+    <span style='color:#800000; font-weight:bold; '>long</span> num<span style='color:#808030; '>,</span> denom<span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>protected</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#800000; font-weight:bold; '>normalize</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>long</span> num<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>long</span> denom<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>long</span> bigdivisor<span style='color:#800080; '>;</span>
+	  <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>denom <span style='color:#808030; '>&lt;</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+	    num <span style='color:#808030; '>=</span> <span style='color:#808030; '>-</span>num<span style='color:#800080; '>;</span>
+	    denom <span style='color:#808030; '>=</span> <span style='color:#808030; '>-</span>denom<span style='color:#800080; '>;</span>
+	  <span style='color:#800080; '>}</span>
+	  <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>num <span style='color:#808030; '>==</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span>
+	    denom <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+	  <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+	    <span style='color:#800000; font-weight:bold; '>long</span> tempnum <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>num <span style='color:#808030; '>&lt;</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>?</span> <span style='color:#808030; '>-</span>num <span style='color:#800080; '>:</span> num<span style='color:#800080; '>;</span>
+	    bigdivisor <span style='color:#808030; '>=</span> gcd1<span style='color:#808030; '>(</span>tempnum<span style='color:#808030; '>,</span> denom<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	    <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>bigdivisor <span style='color:#808030; '>></span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+	      num <span style='color:#808030; '>/=</span> bigdivisor<span style='color:#800080; '>;</span>
+		    denom <span style='color:#808030; '>/=</span> bigdivisor<span style='color:#800080; '>;</span>
+            <span style='color:#800080; '>}</span>
+       System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>GCD of the integers is:</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> bigdivisor<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+       System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Result:</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> num<span style='color:#808030; '>+</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>/</span><span style='color:#800000; '>"</span><span style='color:#808030; '>+</span>denom<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	    
+	  <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+
+  <span style='color:#800000; font-weight:bold; '>protected</span> <span style='color:#800000; font-weight:bold; '>long</span> gcd1<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>long</span> a<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>long</span> b<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>while</span> <span style='color:#808030; '>(</span>b <span style='color:#808030; '>></span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+      <span style='color:#800000; font-weight:bold; '>long</span> rem <span style='color:#808030; '>=</span> a <span style='color:#808030; '>%</span> b<span style='color:#800080; '>;</span>
+      a <span style='color:#808030; '>=</span> b<span style='color:#800080; '>;</span>
+      System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>num:</span><span style='color:#800000; '>"</span><span style='color:#808030; '>+</span> a<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      b <span style='color:#808030; '>=</span> rem<span style='color:#800080; '>;</span>
+      System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>denom:</span><span style='color:#800000; '>"</span><span style='color:#808030; '>+</span> b<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> a<span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span>
+
+   
+  <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#400000; '>main</span><span style='color:#808030; '>(</span>String<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> args<span style='color:#808030; '>)</span>
+
+<span style='color:#800080; '>{</span> 
+
+    
+	Scanner <span style='color:#800000; font-weight:bold; '>in</span><span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> Scanner<span style='color:#808030; '>(</span>System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>in</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      
+       <span style='color:#800000; font-weight:bold; '>int</span> num <span style='color:#808030; '>=</span> Integer<span style='color:#808030; '>.</span>parseInt<span style='color:#808030; '>(</span>args<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+      
+     
+       <span style='color:#800000; font-weight:bold; '>int</span> denom <span style='color:#808030; '>=</span> Integer<span style='color:#808030; '>.</span>parseInt<span style='color:#808030; '>(</span>args<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+       <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>denom <span style='color:#808030; '>==</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+      System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span><span style='color:#400000; '>print</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>enter a valid number for denominator:</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+       denom <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>in</span><span style='color:#808030; '>.</span>nextInt<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+       <span style='color:#800080; '>}</span>
+
+    GCD factor<span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> GCD<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+    factor<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>normalize</span><span style='color:#808030; '>(</span>num<span style='color:#808030; '>,</span>denom<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800080; '>}</span>
+
+<span style='color:#800080; '>}</span>
+</pre>
+
+<h1>OUTPUT</h1>
+<img src="GCDimg.jpg">
+</body>
+</html>

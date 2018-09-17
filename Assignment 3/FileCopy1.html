@@ -1,0 +1,43 @@
+<html>
+<body>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>io</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> FileCopy1
+    <span style='color:#800080; '>{</span>
+     <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#400000; '>main</span><span style='color:#808030; '>(</span>String args<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+         <span style='color:#800080; '>{</span>
+         <span style='color:#800000; font-weight:bold; '>try</span>
+             <span style='color:#800080; '>{</span>
+             <span style='color:#603000; '>File</span> file <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#603000; '>File</span><span style='color:#808030; '>(</span>args<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+             BufferedReader breader <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> BufferedReader<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> FileReader<span style='color:#808030; '>(</span>file<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+             String line <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> oldtext <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+             <span style='color:#800000; font-weight:bold; '>while</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>line <span style='color:#808030; '>=</span> breader<span style='color:#808030; '>.</span>readLine<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>!=</span> <span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span>
+                 <span style='color:#800080; '>{</span>
+                 oldtext <span style='color:#808030; '>+=</span> line <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\r</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+             <span style='color:#800080; '>}</span>
+             breader<span style='color:#808030; '>.</span>close<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            
+             String newtext <span style='color:#808030; '>=</span> oldtext<span style='color:#808030; '>.</span>replaceAll<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>&amp;</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>&amp;amp</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	     String newtext1 <span style='color:#808030; '>=</span> newtext<span style='color:#808030; '>.</span>replaceAll<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>&lt;</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>&amp;lt</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	     String newtext2 <span style='color:#808030; '>=</span> newtext1<span style='color:#808030; '>.</span>replaceAll<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>></span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>&amp;gt</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            
+            
+            
+             FileWriter <span style='color:#800000; font-weight:bold; '>out</span> <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> FileWriter<span style='color:#808030; '>(</span>args<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+             <span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>write</span><span style='color:#808030; '>(</span>newtext2<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	    
+             <span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>close<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+         <span style='color:#800080; '>}</span>
+         <span style='color:#800000; font-weight:bold; '>catch</span> <span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>Exception</span> e<span style='color:#808030; '>)</span>
+             <span style='color:#800080; '>{</span>
+             e<span style='color:#808030; '>.</span>printStackTrace<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+         <span style='color:#800080; '>}</span>
+     <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+</pre>
+<h1>OUTPUT</h1>
+<img src="FileCopyimg.jpg">
+<img src="FileCopy11.jpg">
+<img src="FileCopy22.jpg">
+</body>
+</html>

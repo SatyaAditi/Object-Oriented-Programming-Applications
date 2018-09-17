@@ -1,0 +1,60 @@
+<html>
+<body>
+
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>io</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>util</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>JOptionPane</span><span style='color:#800080; '>;</span>
+ <span style='color:#800000; font-weight:bold; '>class</span> Resistor<span style='color:#800080; '>{</span>
+
+ <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>double</span> a<span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>public</span> Resistor<span style='color:#808030; '>(</span>String x<span style='color:#808030; '>)</span>
+
+<span style='color:#800080; '>{</span> 
+a<span style='color:#808030; '>=</span>Double<span style='color:#808030; '>.</span>parseDouble<span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>class</span> ParseSplit
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#400000; '>main</span><span style='color:#808030; '>(</span>String args<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>float</span> ParallelResistance<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+String phrase<span style='color:#808030; '>=</span>JOptionPane<span style='color:#808030; '>.</span>showInputDialog<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>,</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Input String of Resistor names and values</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+
+   String delims <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>[ ]+</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+
+   String<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> tokens <span style='color:#808030; '>=</span> phrase<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span>delims<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+   
+
+<span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>int</span> i <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> i <span style='color:#808030; '>&lt;</span> tokens<span style='color:#808030; '>.</span>length<span style='color:#800080; '>;</span> i<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span>tokens<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span> 
+
+
+
+
+ArrayList <span style='color:#808030; '>&lt;</span>Resistor<span style='color:#808030; '>></span> f<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> ArrayList<span style='color:#808030; '>&lt;</span>Resistor<span style='color:#808030; '>></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>int</span> j<span style='color:#808030; '>=</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>j<span style='color:#808030; '>&lt;</span>tokens<span style='color:#808030; '>.</span>length<span style='color:#800080; '>;</span>j<span style='color:#808030; '>=</span>j<span style='color:#808030; '>+</span><span style='color:#008c00; '>2</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+f<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> Resistor<span style='color:#808030; '>(</span>tokens<span style='color:#808030; '>[</span>j<span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+
+<span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span>Resistor k<span style='color:#808030; '>:</span>f<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+Double p<span style='color:#808030; '>=</span>Resistor<span style='color:#808030; '>.</span>a<span style='color:#800080; '>;</span>
+ ParallelResistance <span style='color:#808030; '>+=</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>/</span>p<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>The parallel Resistance of the Parsed string is </span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> <span style='color:#808030; '>(</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>/</span>ParallelResistance<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+String s<span style='color:#808030; '>=</span>String<span style='color:#808030; '>.</span>valueOf<span style='color:#808030; '>(</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>/</span>ParallelResistance<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+JOptionPane<span style='color:#808030; '>.</span>showMessageDialog<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>,</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Parallel Resistance</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> s<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+</pre>
+<h1>OUTPUT</h1><br>
+<img src="ParseSplitimg1.jpg><br>
+<img src="ParseSplitimg2.jpg>
+</body>
+</html>

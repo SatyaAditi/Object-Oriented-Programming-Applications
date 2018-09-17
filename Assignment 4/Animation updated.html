@@ -1,0 +1,93 @@
+<html>
+<body>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Graphics</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Color</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>event</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>ActionEvent</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>event</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>ActionListener</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>JPanel</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>JFrame</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Timer</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>util</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>ArrayList</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+
+
+ <span style='color:#800000; font-weight:bold; '>class</span> Panel3 extends JPanel
+<span style='color:#800080; '>{</span>
+    ArrayList<span style='color:#808030; '>&lt;</span>Object1<span style='color:#808030; '>></span> balls <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> ArrayList<span style='color:#808030; '>&lt;</span>Object1<span style='color:#808030; '>></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>private</span> Timer myTimer<span style='color:#800080; '>;</span>
+    Panel3<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+	balls<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> Object1<span style='color:#808030; '>(</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span>Color<span style='color:#808030; '>.</span>RED<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	balls<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> Object1<span style='color:#808030; '>(</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>90</span><span style='color:#808030; '>,</span>Color<span style='color:#808030; '>.</span>GREEN<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	balls<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> Object1<span style='color:#808030; '>(</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>130</span><span style='color:#808030; '>,</span>Color<span style='color:#808030; '>.</span>YELLOW<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>		
+	<span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>Object</span> b<span style='color:#808030; '>:</span> balls<span style='color:#808030; '>)</span> System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span>b<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    
+
+    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> rotate<span style='color:#808030; '>(</span>Object1 b<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>double</span> angle<span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+	<span style='color:#800000; font-weight:bold; '>double</span> x <span style='color:#808030; '>=</span> b<span style='color:#808030; '>.</span>px <span style='color:#808030; '>-</span> <span style='color:#008c00; '>135</span><span style='color:#800080; '>;</span>
+	<span style='color:#800000; font-weight:bold; '>double</span> y <span style='color:#808030; '>=</span> b<span style='color:#808030; '>.</span>py <span style='color:#808030; '>-</span> <span style='color:#008c00; '>75</span><span style='color:#800080; '>;</span>
+	<span style='color:#800000; font-weight:bold; '>double</span> phi <span style='color:#808030; '>=</span> angle<span style='color:#808030; '>*</span>Math<span style='color:#808030; '>.</span><span style='color:#7d0045; '>PI</span><span style='color:#808030; '>/</span><span style='color:#008000; '>180.0</span><span style='color:#800080; '>;</span>
+	<span style='color:#800000; font-weight:bold; '>double</span> ct <span style='color:#808030; '>=</span> Math<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>cos</span><span style='color:#808030; '>(</span>phi<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	<span style='color:#800000; font-weight:bold; '>double</span> st <span style='color:#808030; '>=</span> Math<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>sin</span><span style='color:#808030; '>(</span>phi<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	b<span style='color:#808030; '>.</span>set_position<span style='color:#808030; '>(</span>ct<span style='color:#808030; '>*</span>x<span style='color:#808030; '>-</span>st<span style='color:#808030; '>*</span>y<span style='color:#808030; '>+</span><span style='color:#008c00; '>135</span><span style='color:#808030; '>,</span>st<span style='color:#808030; '>*</span>x<span style='color:#808030; '>+</span>ct<span style='color:#808030; '>*</span>y<span style='color:#808030; '>+</span><span style='color:#008c00; '>75</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    
+    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> startAnimation<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+	<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>myTimer <span style='color:#808030; '>==</span> <span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span>
+	<span style='color:#800080; '>{</span>
+	    myTimer <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> Timer<span style='color:#808030; '>(</span><span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>new</span> TimerHandler<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	    myTimer<span style='color:#808030; '>.</span>start<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	<span style='color:#800080; '>}</span>
+	<span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span><span style='color:#808030; '>!</span>myTimer<span style='color:#808030; '>.</span>isRunning<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> myTimer<span style='color:#808030; '>.</span>restart<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    
+    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> stopAnimation<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+	myTimer<span style='color:#808030; '>.</span>stop<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+	
+    <span style='color:#800000; font-weight:bold; '>private</span> <span style='color:#800000; font-weight:bold; '>class</span> TimerHandler implements ActionListener
+    <span style='color:#800080; '>{</span>
+	<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> actionPerformed<span style='color:#808030; '>(</span>ActionEvent actionevent<span style='color:#808030; '>)</span>
+	<span style='color:#800080; '>{</span>
+	   Object1 b <span style='color:#808030; '>=</span> balls<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>get</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	    rotate<span style='color:#808030; '>(</span>b<span style='color:#808030; '>,</span><span style='color:#008c00; '>3</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	    repaint<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	<span style='color:#800080; '>}</span>
+	
+    <span style='color:#800080; '>}</span>
+   <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> paintComponent<span style='color:#808030; '>(</span>Graphics g<span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+	
+	<span style='color:#800000; font-weight:bold; '>super</span><span style='color:#808030; '>.</span>paintComponent<span style='color:#808030; '>(</span> g <span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	<span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span>Object1 b<span style='color:#808030; '>:</span> balls<span style='color:#808030; '>)</span> b<span style='color:#808030; '>.</span>draw<span style='color:#808030; '>(</span>g<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	<span style='color:#696969; '>//</span><span style='color:#696969; '>for (Object1 b: balls) b.draw(g);</span>
+<span style='color:#800080; '>}</span>
+	 
+<span style='color:#800080; '>}</span>
+
+ <span style='color:#800000; font-weight:bold; '>class</span> Animation
+<span style='color:#800080; '>{</span>
+    Panel3 panel<span style='color:#800080; '>;</span>
+
+    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#400000; '>main</span><span style='color:#808030; '>(</span>String args<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+    <span style='color:#800080; '>{</span>
+	Panel3 panel <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> Panel3<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	JFrame application <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> JFrame<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Moving Bulb</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	application<span style='color:#808030; '>.</span>setDefaultCloseOperation<span style='color:#808030; '>(</span>JFrame<span style='color:#808030; '>.</span>EXIT_ON_CLOSE<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	application<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span>panel<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	application<span style='color:#808030; '>.</span>setSize<span style='color:#808030; '>(</span><span style='color:#008c00; '>400</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>400</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	application<span style='color:#808030; '>.</span>setVisible<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	panel<span style='color:#808030; '>.</span>startAnimation<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+</pre>
+
+<img src="Animationimg1.jpg"><br>
+<img src="Animationimg2.jpg">
+
+</body>
+</html>

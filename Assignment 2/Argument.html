@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 <head>
 <title>Assignment 2</title>
@@ -42,4 +43,50 @@ System.out.println("The parallel Resistance for the arraylist objects is " + (1/
 <img src="Argumentimage.jpg">
 
 </body>
+=======
+<html>
+<head>
+<title>Assignment 2</title>
+<body>
+
+
+
+import java.util.*;<br>
+class Argument<br>
+{<br>
+public static void main(String args[ ])<br>
+{<br>
+double Rp=0;<br>
+float r1=Float.parseFloat(args[1]);<br>
+float r2=Float.parseFloat(args[3]);<br>
+float r3=Float.parseFloat(args[5]);<br>
+float rs=r1+r2+r3;<br>
+float rp=(r1*r2*r3)/(r1*r2+r2*r3+r3*r1);<br>
+System.out.println("The series resistance is " + rs + "\n" + "The parallel resistance" + rp );<br>
+ArrayList al=new ArrayList();<br>
+al.add(45);<br>
+al.add(34);<br>
+al.add(50);<br>
+al.add(56);<br>
+al.add(90);<br>
+for ( Object obj:al)<br>
+{<br>
+double m= ((Number) obj).doubleValue();<br>
+
+Rp +=1/m;<br>
+}<br>
+
+
+System.out.println("The parallel Resistance for the arraylist objects is " + (1/Rp));<br>
+
+
+
+}<br>
+
+<h1>OUTPUT</h1><br>
+
+<img src="Argumentimage.jpg">
+
+</body>
+>>>>>>> 19dc9b86e7dcb14ccc9c136575df973624ad7246
 </html>

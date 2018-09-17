@@ -1,0 +1,79 @@
+<html>
+<body>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>util</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Scanner</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>util</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> Rational  <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>int</span> top<span style='color:#808030; '>,</span>bot<span style='color:#800080; '>;</span>
+  <span style='color:#800000; font-weight:bold; '>protected</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>int</span> num<span style='color:#808030; '>,</span> denom<span style='color:#800080; '>;</span>
+ <span style='color:#800000; font-weight:bold; '>private</span> Rational a<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>public</span> Rational<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>int</span> top<span style='color:#808030; '>,</span><span style='color:#800000; font-weight:bold; '>int</span> bot<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>num <span style='color:#808030; '>=</span> num<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>.</span>denom <span style='color:#808030; '>=</span> denom<span style='color:#800080; '>;</span>
+	  <span style='color:#800000; font-weight:bold; '>normalize</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>protected</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#800000; font-weight:bold; '>normalize</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>int</span> bigdivisor<span style='color:#800080; '>;</span>
+	  <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>denom <span style='color:#808030; '>&lt;</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+	    num <span style='color:#808030; '>=</span> <span style='color:#808030; '>-</span>num<span style='color:#800080; '>;</span>
+	    denom <span style='color:#808030; '>=</span> <span style='color:#808030; '>-</span>denom<span style='color:#800080; '>;</span>
+	  <span style='color:#800080; '>}</span>
+	  <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>num <span style='color:#808030; '>==</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span>
+	    denom <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+	  <span style='color:#800000; font-weight:bold; '>else</span> <span style='color:#800080; '>{</span>
+	    <span style='color:#800000; font-weight:bold; '>int</span> tempnum <span style='color:#808030; '>=</span> <span style='color:#808030; '>(</span>num <span style='color:#808030; '>&lt;</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>?</span> <span style='color:#808030; '>-</span>num <span style='color:#800080; '>:</span> num<span style='color:#800080; '>;</span>
+	    bigdivisor <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>gcd</span><span style='color:#808030; '>(</span>tempnum<span style='color:#808030; '>,</span> denom<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	    <span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>bigdivisor <span style='color:#808030; '>></span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+	      num <span style='color:#808030; '>/=</span> bigdivisor<span style='color:#800080; '>;</span>
+		    denom <span style='color:#808030; '>/=</span> bigdivisor<span style='color:#800080; '>;</span>
+	    <span style='color:#800080; '>}</span>
+	  <span style='color:#800080; '>}</span>
+  <span style='color:#800080; '>}</span>
+ <span style='color:#800000; font-weight:bold; '>protected</span> <span style='color:#800000; font-weight:bold; '>int</span> <span style='color:#800000; font-weight:bold; '>gcd</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>int</span> a<span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>int</span> b<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>while</span> <span style='color:#808030; '>(</span>b <span style='color:#808030; '>></span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+      <span style='color:#800000; font-weight:bold; '>int</span> rem <span style='color:#808030; '>=</span> a <span style='color:#808030; '>%</span> b<span style='color:#800080; '>;</span>
+      a <span style='color:#808030; '>=</span> b<span style='color:#800080; '>;</span>
+      b <span style='color:#808030; '>=</span> rem<span style='color:#800080; '>;</span>
+    <span style='color:#800080; '>}</span>
+    <span style='color:#800000; font-weight:bold; '>return</span> a<span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>int</span> numerator<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>return</span> num<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>int</span> denominator<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>return</span> denom<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>   
+
+<span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>public</span> Rational add<span style='color:#808030; '>(</span>Rational a<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+   <span style='color:#800000; font-weight:bold; '>int</span> top <span style='color:#808030; '>=</span> numerator<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> a<span style='color:#808030; '>.</span>denominator<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span> denominator<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> a<span style='color:#808030; '>.</span>numerator<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>int</span> bot <span style='color:#808030; '>=</span> denominator<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> a<span style='color:#808030; '>.</span>denominator<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+   <span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#800000; font-weight:bold; '>new</span> Rational<span style='color:#808030; '>(</span>top<span style='color:#808030; '>,</span>bot<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span>
+ 
+  
+
+String latex<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>return</span> <span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>$$</span><span style='color:#0f69ff; '>\f</span><span style='color:#0000e6; '>rac{1}{4} + </span><span style='color:#0f69ff; '>\f</span><span style='color:#0000e6; '>rac{1}{3}$$</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#400000; '>main</span><span style='color:#808030; '>(</span>String<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> args<span style='color:#808030; '>)</span>
+
+<span style='color:#800080; '>{</span>
+
+num<span style='color:#808030; '>=</span>Integer<span style='color:#808030; '>.</span>parseInt<span style='color:#808030; '>(</span>args<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+denom<span style='color:#808030; '>=</span>Integer<span style='color:#808030; '>.</span>parseInt<span style='color:#808030; '>(</span>args<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+ Rational a<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> Rational<span style='color:#808030; '>(</span><span style='color:#008c00; '>4</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>5</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+Rational<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+ 
+ 
+
+
+  System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>a =</span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> String<span style='color:#808030; '>.</span>valueOf<span style='color:#808030; '>(</span>a<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+
+<span style='color:#800080; '>}</span>
+</pre>
+</body>
+</html>

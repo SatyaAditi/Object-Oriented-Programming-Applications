@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.awt.Graphics;<br>
 import java.awt.FontMetrics;<br>
 import java.awt.geom.Rectangle2D;<br>
@@ -42,4 +43,50 @@ return h<br>
         panel.counter();<br>
 	
     }<br>
+=======
+import java.awt.Graphics;<br>
+import java.awt.FontMetrics;<br>
+import java.awt.geom.Rectangle2D;<br>
+import javax.swing.JPanel;<br>
+import javax.swing.JFrame;<br>
+
+public class Test1 extends JPanel<br>
+{<br>
+	public static int count=0;<br>
+	public static int h;<br>
+	
+    public void paintComponent(Graphics g)<br>
+    {<br>
+	super.paintComponent( g );<br>
+	int width = getWidth();<br>
+	int height = getHeight();<br>
+	String str = String.format("width %d height %d",width,height,count++);<br>
+
+	FontMetrics fm = g.getFontMetrics();<br>
+	Rectangle2D rect = fm.getStringBounds(str,g);<br>
+	width -= rect.getWidth();<br>
+	height -= rect.getHeight();<br>
+	g.drawString(str,width/2,height/2,count++);<br>
+	
+	
+    }<br>
+public int counter()<br>
+{<br>
+if(paintComponent(Graphics g)==1)<br>
+h= count++;<br>
+return h<br>
+}<br>  
+
+    public static void main( String args[] )<br>
+    {<br>
+	Test1 panel = new Test1();<br>
+	JFrame application = new JFrame("Test1");<br>
+	application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);<br>
+	application.add(panel,h);<br>
+	application.setSize(200,200,h);<br>
+	application.setVisible(true);<br>
+        panel.counter();<br>
+	
+    }<br>
+>>>>>>> 19dc9b86e7dcb14ccc9c136575df973624ad7246
 }<br>

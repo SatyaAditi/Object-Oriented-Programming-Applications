@@ -1,0 +1,98 @@
+import java.util.Scanner;
+import java.util.*;
+public class Rational implements Comparable {
+
+  protected int num, denom;
+
+  public Rational(int num, int denom) throws IllegalArgumentException {
+    if (denom == 0) throw new IllegalArgumentException();
+    this.num = num;
+	  this.denom = denom;
+	  normalize();
+  }
+  
+  public Rational(int num) {
+    this(num, 1);
+  }
+  
+  public Rational() {
+    this(0, 1);
+  }
+  
+  static public Rational add(Rational a,Rational b) {
+   int  top = numerator() * a.denominator() + denominator() * a.numerator();
+    int bot = denominator() * a.denominator();
+    return new Rational(top, bot);
+  }
+public String  toString()
+{
+return "a" + "b";
+}
+
+public class GCD
+{
+ 
+    int  num, denom;
+
+protected void normalize(int num, int denom) {
+    int bigdivisor;
+	  if (denom < 0) {
+	    num = -num;
+	    denom = -denom;
+	  }
+	  if (num == 0)
+	    denom = 1;
+	  else {
+	    int tempnum = (num < 0) ? -num : num;
+	    bigdivisor = gcd1(tempnum, denom);
+	    if (bigdivisor > 1) {
+	      num /= bigdivisor;
+		    denom /= bigdivisor;
+            }
+       System.out.println("GCD of the integers is:" + bigdivisor);
+       System.out.println("Result:" + num+"/"+denom);
+	    
+	  }
+  }
+
+
+
+  protected int gcd1(int a, int b){
+    while (b > 0) {
+      int rem = a % b;
+      a = b;
+      System.out.println("num:"+ a);
+      b = rem;
+      System.out.println("denom:"+ b);
+
+    }
+    return a;
+  }
+
+   
+  public static void main(String[] args)
+
+{ 
+
+     Scanner in = new Scanner(System.in);
+
+      System.out.print("Enter the numerator:");
+       int num = in.nextInt();
+
+      
+      System.out.print("Enter the denominator:");
+       int denom = in.nextInt();
+       if(denom == 0){
+      System.out.print("enter a valid number:");
+       denom = in.nextInt();
+       }
+
+    GCD factor= new GCD();
+
+    factor.normalize(num,denom);
+    System.out.println("a =" + a);
+}
+
+}
+
+     

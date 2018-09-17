@@ -1,0 +1,44 @@
+<html>
+<body>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>io</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>util</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>class</span> Zipped
+<span style='color:#800080; '>{</span>
+
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> writeToFileZipFileContents<span style='color:#808030; '>(</span>String zipFileName<span style='color:#808030; '>,</span>String outputFileName<span style='color:#808030; '>)</span> throws java<span style='color:#808030; '>.</span>io<span style='color:#808030; '>.</span>IOException 
+<span style='color:#800080; '>{</span>
+java<span style='color:#808030; '>.</span>nio<span style='color:#808030; '>.</span>charset<span style='color:#808030; '>.</span>Charset charset <span style='color:#808030; '>=</span> java<span style='color:#808030; '>.</span>nio<span style='color:#808030; '>.</span>charset<span style='color:#808030; '>.</span>StandardCharsets<span style='color:#808030; '>.</span>US_ASCII<span style='color:#800080; '>;</span>
+    java<span style='color:#808030; '>.</span>nio<span style='color:#808030; '>.</span>file<span style='color:#808030; '>.</span>Path outputFilePath <span style='color:#808030; '>=</span> java<span style='color:#808030; '>.</span>nio<span style='color:#808030; '>.</span>file<span style='color:#808030; '>.</span>Paths<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>get</span><span style='color:#808030; '>(</span>outputFileName<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+    <span style='color:#696969; '>//</span><span style='color:#696969; '> Open zip file and create output file with </span>
+    <span style='color:#696969; '>//</span><span style='color:#696969; '> try-with-resources statement</span>
+
+ <span style='color:#800000; font-weight:bold; '>try</span> <span style='color:#808030; '>(</span>java<span style='color:#808030; '>.</span>util<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>zip</span><span style='color:#808030; '>.</span>ZipFile zf <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> java<span style='color:#808030; '>.</span>util<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>zip</span><span style='color:#808030; '>.</span>ZipFile<span style='color:#808030; '>(</span>zipFileName<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>java<span style='color:#808030; '>.</span>io<span style='color:#808030; '>.</span>BufferedWriter writer <span style='color:#808030; '>=</span> java<span style='color:#808030; '>.</span>nio<span style='color:#808030; '>.</span>file<span style='color:#808030; '>.</span>Files<span style='color:#808030; '>.</span>newBufferedWriter<span style='color:#808030; '>(</span>outputFilePath<span style='color:#808030; '>,</span> charset<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+        <span style='color:#696969; '>//</span><span style='color:#696969; '> Enumerate each entry</span>
+        <span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span>java<span style='color:#808030; '>.</span>util<span style='color:#808030; '>.</span>Enumeration entries <span style='color:#808030; '>=</span> zf<span style='color:#808030; '>.</span>entries<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> entries<span style='color:#808030; '>.</span>hasMoreElements<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#808030; '>)</span> 
+           <span style='color:#800080; '>{</span>
+            <span style='color:#696969; '>//</span><span style='color:#696969; '> Get the entry name and write it to the output file</span>
+            String newLine <span style='color:#808030; '>=</span> System<span style='color:#808030; '>.</span>getProperty<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>line.separator</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            String zipEntryName <span style='color:#808030; '>=</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>java<span style='color:#808030; '>.</span>util<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>zip</span><span style='color:#808030; '>.</span>ZipEntry<span style='color:#808030; '>)</span>entries<span style='color:#808030; '>.</span>nextElement<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>getName<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span>  newLine<span style='color:#800080; '>;</span>
+            writer<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>write</span><span style='color:#808030; '>(</span>zipEntryName<span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> zipEntryName<span style='color:#808030; '>.</span>length<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#400000; '>main</span><span style='color:#808030; '>(</span>String args<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>try</span>
+<span style='color:#800080; '>{</span>
+writeToFileZipFileContents<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>C:/Users/Aditi/Desktop/Assignment 3.zip</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>C:/Users/Aditi/Desktop/copy.txt</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>catch</span><span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>Exception</span> e<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span> 
+
+<span style='color:#800080; '>}</span>
+</pre>
+<h1>OUTPUT</h1>
+<img src="ZippedOutput.jpg">
+<img src="ZippedOutput2.jpg">
+</body>
+</html>
