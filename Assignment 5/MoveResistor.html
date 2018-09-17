@@ -1,0 +1,128 @@
+<html>
+<head>Assignment 5</head>
+<body><pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>BasicStroke</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Color</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Graphics</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Graphics2D</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>event</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>ActionEvent</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>event</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>ActionListener</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>geom</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>AffineTransform</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>util</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>ArrayList</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>util</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>concurrent</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>atomic</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>AtomicBoolean</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>JButton</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>JFrame</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>JPanel</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>class</span> Resistor
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>double</span> a<span style='color:#800080; '>;</span>
+   <span style='color:#800000; font-weight:bold; '>int</span> width<span style='color:#808030; '>,</span> height<span style='color:#800080; '>;</span>
+   <span style='color:#800000; font-weight:bold; '>double</span> value<span style='color:#800080; '>;</span>
+   String name<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>public</span> Resistor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> Resistor<span style='color:#808030; '>(</span>String x<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span> 
+a<span style='color:#808030; '>=</span>Double<span style='color:#808030; '>.</span>parseDouble<span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  <span style='color:#800080; '>}</span><span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> MoveResistor extends JPanel implements ActionListener <span style='color:#800080; '>{</span>
+	String name<span style='color:#800080; '>;</span>
+	<span style='color:#696969; '>//</span><span style='color:#696969; '>double LL=0;</span>
+	<span style='color:#696969; '>//</span><span style='color:#696969; '>double RR=0;</span>
+	<span style='color:#800000; font-weight:bold; '>double</span> angle<span style='color:#808030; '>=</span><span style='color:#008c00; '>45</span><span style='color:#800080; '>;</span>
+	<span style='color:#800000; font-weight:bold; '>int</span> x <span style='color:#808030; '>=</span> <span style='color:#008c00; '>100</span><span style='color:#808030; '>,</span>y<span style='color:#808030; '>=</span><span style='color:#008c00; '>100</span><span style='color:#808030; '>,</span>n<span style='color:#800080; '>;</span>
+	<span style='color:#800000; font-weight:bold; '>private</span> JButton left<span style='color:#800080; '>;</span>
+	<span style='color:#800000; font-weight:bold; '>private</span> JButton right<span style='color:#800080; '>;</span>
+	<span style='color:#800000; font-weight:bold; '>private</span> JButton rotate<span style='color:#800080; '>;</span>
+	
+	Resistor dr <span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> Resistor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	<span style='color:#800000; font-weight:bold; '>static</span> ArrayList<span style='color:#808030; '>&lt;</span>Resistor<span style='color:#808030; '>></span> list <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> ArrayList<span style='color:#808030; '>&lt;</span>Resistor<span style='color:#808030; '>></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	
+	
+	
+	<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> paintComponent<span style='color:#808030; '>(</span>Graphics g<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+		<span style='color:#800000; font-weight:bold; '>super</span><span style='color:#808030; '>.</span>paintComponent<span style='color:#808030; '>(</span>g<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		Graphics2D g2d <span style='color:#808030; '>=</span><span style='color:#808030; '>(</span>Graphics2D<span style='color:#808030; '>)</span> g<span style='color:#800080; '>;</span>
+		
+		 AffineTransform saveTransform <span style='color:#808030; '>=</span> g2d<span style='color:#808030; '>.</span>getTransform<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		 AffineTransform AT <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> AffineTransform<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		<span style='color:#696969; '>//</span><span style='color:#696969; '>System.out.println("The rectangle is "+x+" "+y+" "+angle);</span>
+		  
+		 AT<span style='color:#808030; '>.</span>rotate<span style='color:#808030; '>(</span>Math<span style='color:#808030; '>.</span>toRadians<span style='color:#808030; '>(</span>angle<span style='color:#808030; '>)</span><span style='color:#808030; '>,</span>x<span style='color:#808030; '>,</span>y<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		 g2d<span style='color:#808030; '>.</span>setTransform<span style='color:#808030; '>(</span>AT<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		
+		g2d<span style='color:#808030; '>.</span>setColor<span style='color:#808030; '>(</span>Color<span style='color:#808030; '>.</span>green<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		
+		<span style='color:#800000; font-weight:bold; '>int</span> xxpoints<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span><span style='color:#800080; '>{</span>x<span style='color:#808030; '>-</span><span style='color:#008c00; '>45</span><span style='color:#808030; '>,</span>x<span style='color:#808030; '>-</span><span style='color:#008c00; '>35</span><span style='color:#808030; '>,</span>x<span style='color:#808030; '>-</span><span style='color:#008c00; '>25</span><span style='color:#808030; '>,</span>x<span style='color:#808030; '>-</span><span style='color:#008c00; '>15</span><span style='color:#808030; '>,</span>x<span style='color:#808030; '>-</span><span style='color:#008c00; '>5</span><span style='color:#808030; '>,</span>x<span style='color:#808030; '>+</span><span style='color:#008c00; '>5</span><span style='color:#808030; '>,</span>x<span style='color:#808030; '>+</span><span style='color:#008c00; '>15</span><span style='color:#808030; '>,</span>x<span style='color:#808030; '>+</span><span style='color:#008c00; '>25</span><span style='color:#808030; '>,</span>x<span style='color:#808030; '>+</span><span style='color:#008c00; '>35</span><span style='color:#808030; '>,</span>x<span style='color:#808030; '>+</span><span style='color:#008c00; '>45</span><span style='color:#800080; '>}</span><span style='color:#800080; '>;</span>
+		<span style='color:#800000; font-weight:bold; '>int</span> yypoints<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span><span style='color:#800080; '>{</span>y<span style='color:#808030; '>,</span>y<span style='color:#808030; '>+</span><span style='color:#008c00; '>10</span><span style='color:#808030; '>,</span>y<span style='color:#808030; '>-</span><span style='color:#008c00; '>20</span><span style='color:#808030; '>,</span>y<span style='color:#808030; '>+</span><span style='color:#008c00; '>20</span><span style='color:#808030; '>,</span>y<span style='color:#808030; '>-</span><span style='color:#008c00; '>20</span><span style='color:#808030; '>,</span>y<span style='color:#808030; '>+</span><span style='color:#008c00; '>20</span><span style='color:#808030; '>,</span>y<span style='color:#808030; '>-</span><span style='color:#008c00; '>20</span><span style='color:#808030; '>,</span>y<span style='color:#808030; '>+</span><span style='color:#008c00; '>20</span><span style='color:#808030; '>,</span>y<span style='color:#808030; '>-</span><span style='color:#008c00; '>20</span><span style='color:#808030; '>,</span>y<span style='color:#800080; '>}</span><span style='color:#800080; '>;</span>
+		<span style='color:#800000; font-weight:bold; '>int</span> npoints<span style='color:#808030; '>=</span><span style='color:#008c00; '>10</span><span style='color:#800080; '>;</span>
+		 g2d<span style='color:#808030; '>.</span>setStroke<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> BasicStroke<span style='color:#808030; '>(</span><span style='color:#008000; '>4.0</span><span style='color:#006600; '>f</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> 
+		 g2d<span style='color:#808030; '>.</span>drawPolyline<span style='color:#808030; '>(</span>xxpoints<span style='color:#808030; '>,</span> yypoints<span style='color:#808030; '>,</span> npoints<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		 g2d<span style='color:#808030; '>.</span>setTransform<span style='color:#808030; '>(</span>saveTransform<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		<span style='color:#696969; '>//</span><span style='color:#696969; '> System.out.println("hello");</span>
+		 
+		 
+	<span style='color:#800080; '>}</span>
+	<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> actionPerformed<span style='color:#808030; '>(</span>ActionEvent e<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+		System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span>e<span style='color:#808030; '>.</span>getActionCommand<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		<span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>e<span style='color:#808030; '>.</span>getSource<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>==</span>left<span style='color:#808030; '>)</span>
+			goleft<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		<span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>e<span style='color:#808030; '>.</span>getSource<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>==</span>right<span style='color:#808030; '>)</span>
+			goright<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		<span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>e<span style='color:#808030; '>.</span>getSource<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>==</span>rotate<span style='color:#808030; '>)</span>
+			gorotate<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		repaint<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		
+		
+	<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> goleft<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+		
+		x<span style='color:#808030; '>=</span>x<span style='color:#808030; '>-</span><span style='color:#008c00; '>10</span><span style='color:#800080; '>;</span>
+		<span style='color:#696969; '>//</span><span style='color:#696969; '>x+=LL;</span>
+		System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>left</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		
+	<span style='color:#800080; '>}</span>
+	<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> goright<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+		x<span style='color:#808030; '>=</span>x<span style='color:#808030; '>+</span><span style='color:#008c00; '>10</span><span style='color:#800080; '>;</span>
+	<span style='color:#800080; '>}</span>
+	
+	<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> gorotate<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+		angle<span style='color:#808030; '>=</span>angle<span style='color:#808030; '>+</span><span style='color:#008c00; '>45</span><span style='color:#800080; '>;</span>
+	<span style='color:#800080; '>}</span>
+	<span style='color:#800000; font-weight:bold; '>public</span> MoveResistor <span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+		<span style='color:#696969; '>//</span><span style='color:#696969; '>setLayout(null);</span>
+		
+		<span style='color:#696969; '>//</span><span style='color:#696969; '>Mypanel =new Mypanel();</span>
+		left<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> JButton<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Left</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		left<span style='color:#808030; '>.</span>setBounds<span style='color:#808030; '>(</span><span style='color:#008c00; '>100</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>100</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>30</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		left<span style='color:#808030; '>.</span>addActionListener<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		
+		right<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> JButton<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Right</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		right<span style='color:#808030; '>.</span>setBounds<span style='color:#808030; '>(</span><span style='color:#008c00; '>200</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>100</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>30</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		right<span style='color:#808030; '>.</span>addActionListener<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		
+		rotate<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> JButton<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Rotate</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		rotate<span style='color:#808030; '>.</span>setBounds<span style='color:#808030; '>(</span><span style='color:#008c00; '>400</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>50</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>100</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>30</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		rotate<span style='color:#808030; '>.</span>addActionListener<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		add<span style='color:#808030; '>(</span>left<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		add<span style='color:#808030; '>(</span>right<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		add<span style='color:#808030; '>(</span>rotate<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+		
+	<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#400000; '>main</span><span style='color:#808030; '>(</span>String args<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+MoveResistor l<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> MoveResistor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+JFrame application <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> JFrame<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Resistor</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	application<span style='color:#808030; '>.</span>setDefaultCloseOperation<span style='color:#808030; '>(</span>JFrame<span style='color:#808030; '>.</span>EXIT_ON_CLOSE<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	application<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span>l<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	application<span style='color:#808030; '>.</span>setSize<span style='color:#808030; '>(</span><span style='color:#008c00; '>200</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>200</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+	application<span style='color:#808030; '>.</span>setVisible<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+       
+<span style='color:#800080; '>}</span>
+
+	
+<span style='color:#800080; '>}</span>
+</pre>
+</body>
+</html>

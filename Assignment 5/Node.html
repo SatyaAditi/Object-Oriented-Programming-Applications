@@ -1,0 +1,148 @@
+<html>
+<head><title>Assignment 5</title></head>
+<body><pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>Jama</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>event</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>io</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>util</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+
+
+
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> Resistor  extends JFrame implements ActionListener<span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> Double a<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>private</span> JButton b<span style='color:#800080; '>;</span>
+ <span style='color:#800000; font-weight:bold; '>private</span> JFileChooser filechooser<span style='color:#800080; '>;</span>
+ <span style='color:#800000; font-weight:bold; '>private</span> String line<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>int</span> node1<span style='color:#808030; '>,</span>node2<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>double</span> value<span style='color:#800080; '>;</span>
+ArrayList nodeList<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> ArrayList<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+ArrayList<span style='color:#808030; '>&lt;</span>Resistor<span style='color:#808030; '>></span> resList<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> ArrayList<span style='color:#808030; '>&lt;</span>Resistor<span style='color:#808030; '>></span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>double</span> g<span style='color:#800080; '>;</span>
+JTextArea area <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> JTextArea<span style='color:#808030; '>(</span><span style='color:#008c00; '>40</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>30</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>public</span> Resistor<span style='color:#808030; '>(</span>Double a<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> actionPerformed<span style='color:#808030; '>(</span>ActionEvent e<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+
+   JFileChooser fileChooser <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> JFileChooser<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+     
+    <span style='color:#800000; font-weight:bold; '>int</span> opr <span style='color:#808030; '>=</span> fileChooser<span style='color:#808030; '>.</span>showOpenDialog<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    <span style='color:#800000; font-weight:bold; '>if</span><span style='color:#808030; '>(</span>opr <span style='color:#808030; '>==</span> JFileChooser<span style='color:#808030; '>.</span>APPROVE_OPTION<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>try</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#603000; '>File</span> f<span style='color:#808030; '>=</span> fileChooser<span style='color:#808030; '>.</span>getSelectedFile<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>  
+BufferedReader br <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> BufferedReader<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> FileReader<span style='color:#808030; '>(</span>f<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>while</span><span style='color:#808030; '>(</span><span style='color:#808030; '>(</span>line <span style='color:#808030; '>=</span> br<span style='color:#808030; '>.</span>readLine<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>!=</span> <span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+String delims <span style='color:#808030; '>=</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>[ ]+</span><span style='color:#800000; '>"</span><span style='color:#800080; '>;</span>
+String<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> tokens <span style='color:#808030; '>=</span> line<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>split</span><span style='color:#808030; '>(</span>delims<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+ node1 <span style='color:#808030; '>=</span> Integer<span style='color:#808030; '>.</span>parseInt<span style='color:#808030; '>(</span>tokens<span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+ node2 <span style='color:#808030; '>=</span> Integer<span style='color:#808030; '>.</span>parseInt<span style='color:#808030; '>(</span>tokens<span style='color:#808030; '>[</span><span style='color:#008c00; '>2</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>double</span> value<span style='color:#808030; '>=</span>Double<span style='color:#808030; '>.</span>parseDouble<span style='color:#808030; '>(</span>tokens<span style='color:#808030; '>[</span><span style='color:#008c00; '>3</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+nodeList<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span>node1<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+nodeList<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span>node2<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+resList<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> Resistor<span style='color:#808030; '>(</span>value<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#696969; '>//</span><span style='color:#696969; '>mylist.add(new Resistor(name,node1,node2,value,x,y,angle));</span>
+<span style='color:#696969; '>//</span><span style='color:#696969; '>area.append(Integer.toString(node1)+ "\n");</span>
+area<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>append</span><span style='color:#808030; '>(</span>Integer<span style='color:#808030; '>.</span><span style='color:#400000; '>toString</span><span style='color:#808030; '>(</span>nodeList<span style='color:#808030; '>.</span>size<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800080; '>}</span>
+
+
+<span style='color:#800080; '>}</span>
+
+<span style='color:#800000; font-weight:bold; '>catch</span><span style='color:#808030; '>(</span>IOException ee<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+
+  ee<span style='color:#808030; '>.</span>printStackTrace<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+  <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> Resistor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+
+JPanel p <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> JPanel<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+setContentPane<span style='color:#808030; '>(</span>p<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+JButton b <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> JButton<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Select your file</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+p<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span>area<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+p<span style='color:#808030; '>.</span>add<span style='color:#808030; '>(</span>b<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+b<span style='color:#808030; '>.</span>addActionListener<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>this</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+setSize<span style='color:#808030; '>(</span><span style='color:#008c00; '>600</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>600</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+setLocationRelativeTo<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+setDefaultCloseOperation<span style='color:#808030; '>(</span><span style='color:#008c00; '>3</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800080; '>}</span>
+
+<span style='color:#800000; font-weight:bold; '>int</span> getNode1<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>return</span> node1<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>int</span> getNode2<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>return</span> node2<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+Double getValue<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>return</span> value<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>void</span> solvecircuit<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>int</span> numberofnodes <span style='color:#808030; '>=</span> nodeList<span style='color:#808030; '>.</span>size<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span>numberofnodes<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>int</span> i<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span>j<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>try</span><span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>double</span> x<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#800000; font-weight:bold; '>double</span><span style='color:#808030; '>[</span>numberofnodes<span style='color:#808030; '>]</span> <span style='color:#808030; '>[</span>numberofnodes<span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>double</span> y<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#800000; font-weight:bold; '>double</span><span style='color:#808030; '>[</span>numberofnodes<span style='color:#808030; '>]</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>1</span><span style='color:#808030; '>]</span><span style='color:#800080; '>;</span>
+y<span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> <span style='color:#008000; '>1</span><span style='color:#006600; '>e-</span><span style='color:#008000; '>3</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>int</span> k<span style='color:#808030; '>=</span><span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> k<span style='color:#808030; '>&lt;</span>numberofnodes<span style='color:#800080; '>;</span> k<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span> System<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>out</span><span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span>y<span style='color:#808030; '>[</span>k<span style='color:#808030; '>]</span><span style='color:#808030; '>[</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>for</span> <span style='color:#808030; '>(</span>Resistor res<span style='color:#808030; '>:</span>resList<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>g <span style='color:#808030; '>=</span> <span style='color:#008c00; '>1</span><span style='color:#808030; '>/</span>res<span style='color:#808030; '>.</span>getValue<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+i <span style='color:#808030; '>=</span> res<span style='color:#808030; '>.</span>getNode1<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span>
+j <span style='color:#808030; '>=</span> res<span style='color:#808030; '>.</span>getNode2<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>-</span><span style='color:#008c00; '>1</span><span style='color:#800080; '>;</span><span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>i<span style='color:#808030; '>>=</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+x<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>[</span>j<span style='color:#808030; '>]</span> <span style='color:#808030; '>+=</span>g<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>j<span style='color:#808030; '>>=</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> x<span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span><span style='color:#808030; '>[</span>j<span style='color:#808030; '>]</span> <span style='color:#808030; '>-=</span>g<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>j<span style='color:#808030; '>>=</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+x<span style='color:#808030; '>[</span>j<span style='color:#808030; '>]</span><span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span> <span style='color:#808030; '>+=</span>g<span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>if</span> <span style='color:#808030; '>(</span>i<span style='color:#808030; '>>=</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span> x<span style='color:#808030; '>[</span>j<span style='color:#808030; '>]</span><span style='color:#808030; '>[</span>i<span style='color:#808030; '>]</span> <span style='color:#808030; '>-=</span>g<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+
+
+Matrix X <span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> Matrix<span style='color:#808030; '>(</span>x<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+area<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>append</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>A = </span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+Matrix Y<span style='color:#808030; '>=</span><span style='color:#800000; font-weight:bold; '>new</span> Matrix<span style='color:#808030; '>(</span>y<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+area<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>append</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>B= </span><span style='color:#800000; '>"</span><span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+Matrix v<span style='color:#808030; '>=</span>X<span style='color:#808030; '>.</span>solve<span style='color:#808030; '>(</span>Y<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+area<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>append</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>v= </span><span style='color:#800000; '>"</span><span style='color:#808030; '>+</span> <span style='color:#800000; '>"</span><span style='color:#0f69ff; '>\n</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>catch</span><span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>Exception</span> e<span style='color:#808030; '>)</span>
+<span style='color:#800080; '>{</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+
+
+<span style='color:#800000; font-weight:bold; '>class</span> Node
+ 
+
+<span style='color:#800080; '>{</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#400000; '>main</span><span style='color:#808030; '>(</span>String<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> args<span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
+
+
+ Resistor s <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> Resistor<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+ s<span style='color:#808030; '>.</span>solvecircuit<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+  s<span style='color:#808030; '>.</span>setVisible<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+ 
+<span style='color:#800080; '>}</span> 
+
+
+<span style='color:#800080; '>}</span>
+</pre>
+</body>
+</html>

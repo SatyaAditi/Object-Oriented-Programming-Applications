@@ -1,0 +1,90 @@
+<html>
+<head><title>Assignment 5</title>
+<body>
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>io</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>imageio</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>.</span><span style='color:#ffffff; background:#dd0000; font-weight:bold; font-style:italic; '>*</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>java</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>awt</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>geom</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>AffineTransform</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span> <span style='color:#004a43; '>javax</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>swing</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>ImageIcon</span><span style='color:#800080; '>;</span>
+
+
+
+
+<span style='color:#800000; font-weight:bold; '>class</span> ImageFrame extends JFrame
+<span style='color:#800080; '>{</span>
+   <span style='color:#800000; font-weight:bold; '>public</span> ImageFrame<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+   <span style='color:#800080; '>{</span>
+      setTitle<span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>ImageTest</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      setSize<span style='color:#808030; '>(</span>DEFAULT_WIDTH<span style='color:#808030; '>,</span> DEFAULT_HEIGHT<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+   
+
+      ImageComponent component <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> ImageComponent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      add<span style='color:#808030; '>(</span>component<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+   <span style='color:#800080; '>}</span>
+
+   <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>final</span> <span style='color:#800000; font-weight:bold; '>int</span> DEFAULT_WIDTH <span style='color:#808030; '>=</span> <span style='color:#008c00; '>800</span><span style='color:#800080; '>;</span>
+   <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>final</span> <span style='color:#800000; font-weight:bold; '>int</span> DEFAULT_HEIGHT <span style='color:#808030; '>=</span> <span style='color:#008c00; '>400</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800080; '>}</span>
+
+
+<span style='color:#800000; font-weight:bold; '>class</span> ImageComponent extends JComponent
+<span style='color:#800080; '>{</span>
+   <span style='color:#800000; font-weight:bold; '>public</span> ImageComponent<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+   <span style='color:#800080; '>{</span>
+     
+      <span style='color:#800000; font-weight:bold; '>try</span>
+      <span style='color:#800080; '>{</span>
+
+         image <span style='color:#808030; '>=</span> ImageIO<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>read</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#603000; '>File</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Flower.jpg</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+
+        image1 <span style='color:#808030; '>=</span> ImageIO<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>read</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#603000; '>File</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Rose.jpg</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        image2 <span style='color:#808030; '>=</span> ImageIO<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>read</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#603000; '>File</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Shoeflower.jpg</span><span style='color:#800000; '>"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      <span style='color:#800080; '>}</span>
+      <span style='color:#800000; font-weight:bold; '>catch</span> <span style='color:#808030; '>(</span>IOException e<span style='color:#808030; '>)</span>
+      <span style='color:#800080; '>{</span>
+         e<span style='color:#808030; '>.</span>printStackTrace<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      <span style='color:#800080; '>}</span>
+   <span style='color:#800080; '>}</span>
+
+
+   <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>void</span> paintComponent<span style='color:#808030; '>(</span>Graphics g<span style='color:#808030; '>)</span>
+   <span style='color:#800080; '>{</span>
+    <span style='color:#696969; '>//</span><span style='color:#696969; '>  if (image == null) return;</span>
+
+      <span style='color:#800000; font-weight:bold; '>int</span> imageWidth <span style='color:#808030; '>=</span> image<span style='color:#808030; '>.</span>getWidth<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      <span style='color:#800000; font-weight:bold; '>int</span> imageWidth1 <span style='color:#808030; '>=</span> image1<span style='color:#808030; '>.</span>getWidth<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      <span style='color:#800000; font-weight:bold; '>int</span> imageWidth2 <span style='color:#808030; '>=</span> image2<span style='color:#808030; '>.</span>getWidth<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      <span style='color:#800000; font-weight:bold; '>int</span> imageHeight <span style='color:#808030; '>=</span> image<span style='color:#808030; '>.</span>getHeight<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      <span style='color:#800000; font-weight:bold; '>int</span> imageHeight1 <span style='color:#808030; '>=</span> image1<span style='color:#808030; '>.</span>getHeight<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+     <span style='color:#800000; font-weight:bold; '>int</span> imageHeight2 <span style='color:#808030; '>=</span> image1<span style='color:#808030; '>.</span>getHeight<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+
+      g<span style='color:#808030; '>.</span>drawImage<span style='color:#808030; '>(</span>image<span style='color:#808030; '>,</span> <span style='color:#008c00; '>0</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>30</span><span style='color:#808030; '>,</span> imageWidth<span style='color:#808030; '>,</span>imageHeight<span style='color:#808030; '>,</span>  <span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      g<span style='color:#808030; '>.</span>drawImage<span style='color:#808030; '>(</span>image1<span style='color:#808030; '>,</span> imageWidth<span style='color:#808030; '>+</span><span style='color:#008c00; '>20</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>30</span><span style='color:#808030; '>,</span> imageWidth1<span style='color:#808030; '>,</span>imageHeight1<span style='color:#808030; '>,</span>  <span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+      g<span style='color:#808030; '>.</span>drawImage<span style='color:#808030; '>(</span>image2<span style='color:#808030; '>,</span> imageWidth<span style='color:#808030; '>+</span>imageWidth1<span style='color:#808030; '>+</span><span style='color:#008c00; '>40</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>30</span><span style='color:#808030; '>,</span>imageWidth2 <span style='color:#808030; '>,</span>imageHeight2<span style='color:#808030; '>,</span>  <span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+   <span style='color:#800080; '>}</span>
+
+   <span style='color:#800000; font-weight:bold; '>private</span> Image image<span style='color:#800080; '>;</span>
+   <span style='color:#800000; font-weight:bold; '>private</span> Image image1<span style='color:#800080; '>;</span>
+      <span style='color:#800000; font-weight:bold; '>private</span> Image image2<span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> ImageTest
+<span style='color:#800080; '>{</span>
+   <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#800000; font-weight:bold; '>void</span> <span style='color:#400000; '>main</span><span style='color:#808030; '>(</span>String<span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> args<span style='color:#808030; '>)</span>
+   <span style='color:#800080; '>{</span>
+
+               ImageFrame frame <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> ImageFrame<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+               frame<span style='color:#808030; '>.</span>setDefaultCloseOperation<span style='color:#808030; '>(</span>JFrame<span style='color:#808030; '>.</span>EXIT_ON_CLOSE<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+               frame<span style='color:#808030; '>.</span>setVisible<span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>true</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+
+   <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+</pre>
+</body>
+</html>
